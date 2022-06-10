@@ -1,0 +1,890 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: #fafafb;
+}
+
+
+/* Стили страницу с авторизацией */
+
+
+.loginBox{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_container{
+    width: 1050px;
+    display: flex;
+    gap: 6rem;
+}
+
+.login_banner{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+
+.login_forms{
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.login_banner h1{
+    font-size: 3rem;
+    color: #030235;
+}
+
+.login_banner img{
+    width: 100%;
+}
+
+
+/* Стили для формы регистрации и логина */
+
+.registration, .login{
+    padding: 25px 10px;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgb(128 128 128 / 50%);
+    border: 10px solid #fff;
+    border-radius: 25px;
+}
+
+form b{
+    color: #6B6E85;
+}
+
+form span{
+    color: red;
+}
+
+form input, form textarea, form select{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 7px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #98A0AD;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+ 
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+
+.myBtn{
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+    padding: 10px 15px;
+    border: 2px solid #030235;
+    background: #030235;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+form p{
+    text-align: center;
+    margin-top: 20px;
+}
+
+form p a{
+    font-weight: bold;
+    color: #030235;
+}
+
+form h2{
+    color: #030235;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Валидация форм */
+
+.invalid{
+    border-color: red !important;
+    animation: shake 300ms;
+}
+
+.error{
+    font-size: 15px;
+    color: red;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+@keyframes shake{
+    25%{
+        transform: translateX(4px);
+    }
+    50%{
+        transform: translateX(-4px);
+    }
+    75%{
+        transform: translateX(4px);
+    }
+}
+
+.focus{
+    border-color:#030235 !important;
+}
+
+
+/* Стили экрана загрузки */
+
+.loader_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.loader{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0 5px 8px 0;
+    background: repeating-linear-gradient(90deg, currentColor 
+            0 8%, #030235 0 10%) 200% 100%/200% 3px no-repeat;
+    animation: classic 2s steps(6) infinite;
+}
+
+@keyframes classic{
+    to{
+        background-position: 80% 100%;
+    }
+}
+
+
+[hidden]{
+    display: none !important;
+}
+
+
+/* Стили меню */
+
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.main_menu{
+    min-width: 250px;
+    padding: 30px 0 40px 30px;
+    background-color: #080721;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px; */
+}
+
+.main_menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.main_menu p{
+    padding: 10px 0 10px 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.logo{
+    padding-left: 10px;
+}
+
+.main_menu img{
+    width: 45%;
+}
+
+.main_menu > div{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.main_container{
+    position: relative;
+    width: 100%;
+}
+
+
+
+/* Стили пустой страницы с заметками */
+
+.emptyBoard{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emptyBoard img{
+    width: 40%;
+}
+
+.emptyBoard h2{
+    font-weight: bold;
+    font-size: 30px;
+    color: #030235;
+    margin-bottom: 20px;
+}
+
+
+.addCard{
+    position: relative;
+    justify-content: center;
+    padding: 7px 10px;
+    background: inherit;
+    border: none;
+    color: #030235;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+
+/* Стили для страницы с заметками */
+
+.fullBoard{
+    height: 100vh;
+}
+
+.fullBoard_header, .profile_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 7;
+    
+    width: 100%;
+    padding: 30px 4% 10px 4%;
+    border-bottom: 1px solid #c5c2c2;
+    box-shadow: 0 1px 10px rgb(128 128 128 / 50%);
+}
+
+.fullBoard_header  div:first-of-type{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+.little-loader{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    border-top:
+     5px solid #030235;
+    border-left:
+     5px solid #030235;
+    border-right:
+     5px solid #03023505;
+
+    animation: spin 0.575s infinite linear;
+}
+
+
+
+
+.fullBoard_header  h2, .profile_header h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #030235;
+}
+
+
+.fullBoard_content{
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 150px 4% 50px 4%;
+}
+
+  
+#horizontal-scroller {
+    height: 100%;
+    overflow-y: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+/* Стили колонок для заметок */
+
+.column{
+    display: flex;
+    flex-direction: column;
+    width: 27%;
+    min-width: 325px;
+    max-height: 100%;
+    /* padding: 20px 0; */
+    border: 1px solid #c5c2c2;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(128 128 128 / 50%);
+}
+
+.column h2{
+    color: #030235;
+    margin: 0 15px;
+    font-size: 27px;
+}
+
+.column .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.column .content{
+    overflow-y: auto;
+    padding: 0 20px;
+}
+
+.column_footer{
+    padding: 20px;
+}
+
+.column > .content::-webkit-scrollbar {
+    width: 0;
+}
+  
+
+.menuBtn{
+    position: relative;
+    padding: 1px 12px;
+    font-size: 22px;
+    border-radius: 5px;
+    color: #030235;
+    cursor: pointer;
+    border: none;
+}
+
+
+
+.modal-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-menu > button{
+    justify-content: center;
+    padding: 10px 15px;
+    border: 2px solid #030235;
+    background-color: #030235;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* Стили для заметок */
+
+.content > .card{
+    background-color: #fff;
+    margin: 10px 0 30px 0;
+    padding: 10px;
+    border: 1px solid #c5c2c2;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px rgb(128 128 128 / 50%);
+    cursor: grab;
+}
+
+
+.card_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+   
+}
+
+.card_header  div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card_header h3{
+    color: #030235;
+}
+
+.colorBox{
+    width: 25px;
+    height: 17px;
+    border-radius: 5px;
+}
+
+
+.card_header .edit,
+.card_header .delete{
+    padding: 7px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+} 
+
+.card_header .edit{
+    background-color: #017bff;
+}
+
+.card_header .delete{
+    background-color: rgb(241, 40, 40);
+}
+
+.card_header i{
+    font-size: 13px;
+}
+
+.card_content{
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+.card_footer{
+    border-top: 1px #6B6E85 solid;
+    padding-top: 10px;
+    color: #6B6E85;
+    font-size: 13px;
+}
+
+
+.profile_content{
+    overflow-y: auto;
+    padding: 150px 4% 30px 4%;
+
+    display: grid;
+    grid-template-areas: 
+        "user board note -"
+        "chartDoughnut chartBar chartBar chartBar";
+    grid-template-rows: 200px 400px;
+    grid-template-columns: 30% 20% 20% 17%;
+    grid-gap: 3rem;
+
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.about_user{
+    grid-area: user;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.totalBoards{
+    grid-area: board;
+}
+
+.totalNotes{
+    grid-area: note;
+}
+
+.chartDoughnut{
+    grid-area: chartDoughnut;
+}
+
+.chartBar{
+    grid-area: chartBar;
+}
+
+
+.user_avatar{
+    width: 35%;
+}
+.user_information{
+    padding-left: 20px;
+}
+
+.user_information h2{
+    color: #030235;
+    text-transform: capitalize;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+
+
+.user_avatar img{
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid gray;
+    object-fit: cover;
+}
+
+.user_row{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.user_row > div{
+    width: 10%;
+}
+
+.profile_card{
+    padding: 20px;
+    border: 1px solid #c5c2c2;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(128 128 128 / 50%);
+}
+
+.totalBoards, .totalNotes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #030235;
+}
+
+.totalBoards h3, .totalNotes h3{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.totalBoards p, .totalNotes p{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.totalBoards i, .totalNotes i{
+    font-size: 40px;
+}
+
+
+
+/* Стили для модальных окон */
+
+.modal {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px 30px 30px 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 25%;
+}
+
+.modal-content h2{
+    color: #030235;
+}
+
+.modal-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+  
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.row{
+    display: flex;
+    gap: 1rem;
+}
+
+#color{
+    width: 15%;
+    height: 35px;
+}
+
+
+
+@media screen and (max-width: 1490px) {
+    .modal-content {
+        width: 32%;
+    }
+
+    .profile_content {
+        grid-template-columns: 34% 20% 20% 9%;
+        grid-gap: 3rem;
+    }
+
+}
+
+
+@media screen and (max-width: 1350px) {
+
+    .emptyBoard img {
+        width: 60%;
+    }
+
+    .profile_content {
+        grid-template-columns: 37% 22% 22% 9%;
+        grid-gap: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 1350px) {
+
+    .profile_header {
+        background-color: #fafafb;
+    }
+
+    .profile_content {
+        padding: 150px 4% 30px 4%;
+        grid-template-areas:
+            "user -"
+            "board note"
+            "chartDoughnut chartDoughnut"
+            "chartBar chartBar";
+        grid-template-rows: 200px 200px 400px 400px;
+        grid-template-columns: 47% 47%;
+        grid-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 1225px) {
+
+    .emptyBoard img {
+        width: 75%;
+    }
+
+    .modal-content {
+        width: 40%;
+    }
+
+    .login_container {
+        width: 920px;
+        display: flex;
+        gap: 3rem;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .modal-content {
+        width: 48%;
+    }
+
+    .login_banner {
+        display: none;
+    }
+
+    .login_container {
+        display: flex;
+
+        justify-content: center;
+    }
+
+    .main_menu .active{
+        display: none;
+    }
+
+    .main_menu {
+        width: 10%;
+        min-width: 83px;
+        padding: 30px 0 40px 16px;
+    }
+
+    .main_menu img {
+        width: 70%;
+    }
+
+    .logo {
+        padding-left: 0;
+    }
+
+    .fullBoard_header h2, .profile_header h2 {
+        font-size: 35px;
+    }
+
+    .fullBoard_header, .profile_header {
+        padding: 23px 4% 10px 4%;
+    }
+
+    .profile_content,
+    .fullBoard_content {
+        padding: 120px 4% 30px 4%;
+    }
+}
+
+@media screen and (max-width: 840px) {
+
+    .user_avatar {
+        width: 25%;
+    }
+
+    .profile_content {
+        grid-template-areas:
+            "user user"
+            "board note"
+            "chartDoughnut chartDoughnut"
+            "chartBar chartBar";
+        grid-template-rows: 200px 161px 350px 350px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .login_forms {
+        width: 53%;
+    }
+}
+
+
+
+@media screen and (min-width: 800px){
+
+    
+
+    .addCard:is(:hover, :focus),
+    .menuBtn:is(:hover, :focus){
+        color: #fff;
+    }
+
+    .addCard::after,
+    .menuBtn::after{
+        position: absolute;
+        content: '';
+        inset: 0;
+        z-index: -1;
+
+        background-color: #030235;
+        border-radius: 5px;
+
+        transform-origin: left;
+        transform: scale(0);
+        transition: transform 200ms;
+    }
+
+    .addCard:is(:hover, :focus)::after,
+    .menuBtn:is(:hover, :focus)::after{
+        transform: scale(1);
+    }
+
+    .card_header .edit:hover {
+        background-color: #0761c2;
+    }
+
+    .card_header .delete:hover {
+        background-color: rgb(182, 14, 14);
+    }
+
+    .main_menu p:hover{
+        background-color: #fafafb;
+        color: #030235;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+
+    .main_menu p:hover a{
+        color: #030235;
+    }
+
+    .main_menu p:hover a::before{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -50px;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        box-shadow: 35px 35px 0 10px #fafafb;
+        border-radius: 10px;
+        pointer-events: none;
+    }
+
+    .main_menu p:hover a::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -50px;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        box-shadow: 35px -35px 0 10px #fafafb;
+        border-radius: 10px;
+        pointer-events: none;
+    }
+
+
+    .myBtn:hover,
+    .modal-menu > button:hover {
+        background: #030235dc;
+    }
+
+}

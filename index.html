@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4465fdc7db.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.png">
+    <title>Work Fly</title>
+</head>
+<body>
+    
+    <section class="loginBox" hidden>
+
+        <div class="login_container">
+
+            <div class="login_banner">
+                <h1>Structure plans with WorkFly</h1>
+
+                <img src="images/image_1.png" alt="">
+            </div>
+
+            <div class="login_forms">
+
+                <form action="#" class="registration" name="registration">
+
+                    <h2>Welcome!</h2>
+
+                    <p id="registrationError" class="error"></p>
+
+                    <label>
+                        <b>Name <span>*</span></b>
+                        <input type="text" placeholder="Enter FirstName" name="firstName">
+                    </label>
+
+                    <label>
+                        <b>LastName <span>*</span></b>
+                        <input type="text" placeholder="Enter LastName" name="lastName">
+                    </label>
+
+                    <label>
+                        <b>Email <span>*</span></b>
+                        <input type="email" placeholder="Enter Email" name="email">
+                    </label>
+
+                    <label>
+                        <b>Phone </b>
+                        <input class="phone" type="number" placeholder="Enter Phone" name="number">
+                    </label>
+
+                    <label>
+                        <b>Password <span>*</span></b>
+                        <input type="password" placeholder="Enter Password" name="password">
+                    </label>
+
+                    <label>
+                        <b>Confirm password <span>*</span></b>
+                        <input type="password" placeholder="Confirm password" name="repeatPassword">
+                    </label>
+                    
+
+                    <button class="myBtn" type="submit">Get started</button>
+               
+                    <p>Already have an account? <a id="signIn" href="#login">Sign in</a>
+                    </p>
+                </form>
+
+                <form action="#" class="login" name="login">
+                    <h2>Welcome back!</h2>
+
+                    <p id="loginError" class="error"></p>
+
+                    <label>
+                        <b>Email <span>*</span></b>
+                        <input type="email" placeholder="Enter Email" name="email">
+                    </label>
+
+                    <label>
+                        <b>Password <span>*</span></b>
+                        <input type="password" placeholder="Enter Password" name="password">
+                    </label>
+
+
+                    <button class="myBtn" type="submit">Get started</button>
+               
+                    <p>Have no account? <a id="registration" href="#registration">Registration</a></p>
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="main" hidden>
+
+        <nav class="main_menu">
+            <div>
+                <div class="logo">
+                    <img src="images/logo-2.png" alt="">
+                </div>
+                <div class="mune">
+                    <p>
+                        <a href="#dashboard">
+                            <i class="fa-solid fa-table-columns"></i> 
+                            <span class="active">Dashboard</span> 
+                        </a> 
+                    </p>
+                    <p>
+                        <a href="#profile">
+                            <i class="fa-solid fa-address-card"></i> 
+                            <span class="active">Profile</span> 
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="logOut">
+                <p>
+                    <a id="logOut" href="#logOut">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> 
+                        <span class="active">Log out</span>
+                    </a>
+                </p>
+            </div>
+        </nav>
+        
+        <div class="main_container">
+           
+            <div class="emptyBoard" hidden>
+                <img src="images/image_3.png" alt="">
+                <h2>Dashboard is empty</h2>
+                <button id="startWork" class="addCard">
+                    <i class="fa-solid fa-circle-plus"></i> Add new task
+                </button>
+            </div>
+
+            <div class="fullBoard" hidden>
+                <div class="fullBoard_header">
+                    <div>
+                        <h2>Dashboard</h2>
+                        <div>
+                            <div class="little-loader" hidden></div>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="addBoardBtn" class="addCard">
+                            <i class="fa-solid fa-plus"></i> Add new board
+                        </button>
+                    </div>
+                </div>
+                
+
+                <div id="horizontal-scroller" class="fullBoard_content"></div>
+            </div>
+
+            <div class="profile" hidden>
+                <div class="profile_header">
+                    <h2>Profile</h2>
+                    <button id="editProfile" class="addCard">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit profile
+                    </button>
+                </div>
+                
+                <div>
+                    <div class="profile_content">
+                        <div class="about_user profile_card">
+                            <div class="user_avatar">
+                                <img src="images/avatar.png" alt="">
+                            </div>
+    
+                            <div class="user_information">
+                                <h2 id="userName"></h2>
+                                <div class="user_row">
+                                    <div>
+                                        <i class="fa-solid fa-envelopes-bulk"></i>
+                                    </div>
+                                    <p id="userEmil"></p>
+                                </div>
+                                <div class="user_row">
+                                    <div>
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <p id="userPhone"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="totalBoards profile_card">
+                            <div>
+                                <i class="fa-solid fa-table-columns"></i>
+                            </div>
+                            <h3>Total boards</h3>
+                            <p id="totalBoards"></p>
+                        </div>
+
+                        <div class="totalNotes profile_card">
+                            <div>
+                                <i class="fa-regular fa-note-sticky"></i>
+                            </div>
+                            <h3>Total notes</h3>
+                            <p id="totalNotes"></p>
+                        </div>
+
+                        <div class="chartDoughnut profile_card">
+                        </div>
+        
+                        <div class="chartBar profile_card">
+                        </div>
+                    </div>
+    
+                    
+                </div>
+               
+            </div>
+        </div>
+
+    </section>
+
+
+    <div id="modalWindow" class="modal" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <span class="close">&times;</span>
+            </div>
+            
+            <div id="modalBody" class="modal-container">
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="loader_box" hidden>
+        <div class="loader">Loading...</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
